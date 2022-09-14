@@ -17,7 +17,7 @@ resource "aws_instance" "build" {
   instance_type = "t2.micro"
   name = "build"
   key_name = "my-key360"
-  vpc_security_group_ids = [sg-0ff299afa90690ac8]
+  vpc_security_group_ids = "sg-0ff299afa90690ac8"
 
 }
 
@@ -26,6 +26,6 @@ resource "aws_instance" "stage" {
   instance_type = "t2.micro"
   name = "stage"
   key_name = "my-key360"
-  vpc_security_group_ids = [sg-0ff299afa90690ac8]
+  vpc_security_group_ids = "sg-0ff299afa90690ac8"
 }
 
