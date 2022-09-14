@@ -5,6 +5,11 @@ pipeline{
 
     }
     stages{
+        stage('Git clone config.tf'){
+            steps{
+                git 'https://github.com/reolwe/cert'
+            }
+        }
         stage('Terraform init'){
             steps{
                 sh label: '', script: 'terraform init'
@@ -12,7 +17,7 @@ pipeline{
         }
         stage('Terraform apply'){
             steps{
-                sh label: '', script: 'terraform apply'
+                sh label: '', script: 'terraform apply --auto-approve'
             }
         }
     }
