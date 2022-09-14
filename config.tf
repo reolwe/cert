@@ -15,7 +15,7 @@ provider "aws" {
 resource "aws_instance" "build" {
   ami = "ami-08d4ac5b634553e16"
   instance_type = "t2.micro"
-  key_name = "my-key360"
+  key_name = "my-key200"
 
 
 }
@@ -23,7 +23,7 @@ resource "aws_instance" "build" {
 resource "aws_instance" "stage" {
   ami = "ami-08d4ac5b634553e16"
   instance_type = "t2.micro"
-  key_name = "my-key360"
+  key_name = "my-key200"
 
  }
 
