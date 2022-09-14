@@ -25,5 +25,5 @@ resource "aws_instance" "stage" {
   instance_type = "t2.micro"
   key_name = "my-key200"
 
- }
+}
 
