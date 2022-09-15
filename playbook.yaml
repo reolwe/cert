@@ -27,7 +27,8 @@
 - name: Install stage-packages
   hosts: stage
   become: yes
-    tasks:
+
+  tasks:
   - name: Install docker
     apt:
       name: docker.io
