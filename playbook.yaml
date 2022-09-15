@@ -10,7 +10,7 @@
     apt:
       update-cache: yes
 
-- name: Git clone src
+  - name: Git clone src
     git:
       repo: 'https://github.com/reolwe/origin555.git'
       dest: /home/ubuntu/
