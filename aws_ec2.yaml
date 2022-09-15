@@ -5,3 +5,7 @@ regions:
 
 hostnames:
   - ip-address
+
+keyed_groups:
+  - prefix: area
+    key: name
