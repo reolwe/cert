@@ -23,7 +23,7 @@ resource "aws_instance" "build" {
 }
 
 
-}
+
 
 resource "aws_instance" "stage" {
   ami = "ami-08d4ac5b634553e16"
