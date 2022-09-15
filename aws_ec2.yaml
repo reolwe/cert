@@ -5,11 +5,11 @@ regions:
 
 hostnames:
   - ip-address
+  -
+keyed_groups:
+  - prefix: area
+  - key: Name
 
-#keyed_groups:
-#  - prefix: area
-#   key: name
-
-groups:
-  build: "'build' in tags.name"
-  stage: "'stage' in tags.name"
+#groups:
+#  build: "'build' in tags.name"
+#  stage: "'stage' in tags.name"
