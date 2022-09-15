@@ -1,5 +1,8 @@
 pipeline{
     agent any
+
+
+
     tools {
         terraform 'terraform-1'
 
@@ -13,11 +16,20 @@ pipeline{
         stage('Terraform init'){
             steps{
                 sh label: '', script: 'terraform init'
+
             }
         }
         stage('Terraform apply'){
             steps{
                 sh label: '', script: 'terraform apply --auto-approve'
+            }
+        }
+
+
+        stage('Ansible provisioning'){
+            steps{
+
+            sh label: '', script: 'sudo ansible-playbook -i aws_ec2.yaml playbook.yaml'
             }
         }
     }
