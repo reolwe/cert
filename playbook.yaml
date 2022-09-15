@@ -39,7 +39,7 @@
 
 
   - name: Docker build
-    command: docker build --tag=reolwe/tomcatprod .&& docker push reolwe/tomcatprod
+    command: docker build --tag=reolwe/tomcatprod .
     args:
       chdir: /home/ubuntu/src/
 
