@@ -1,0 +1,6 @@
+- name: ping dynamic inventory
+  hosts: build
+
+  tasks:
+   - name: ping dyn inv
+     ping:
