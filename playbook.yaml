@@ -38,12 +38,15 @@
       chdir: /home/ubuntu/src/
 
 
-  - name: Docker build and push
+  - name: Docker build
     command: docker build --tag=reolwe/tomcatprod .&& docker push reolwe/tomcatprod
     args:
       chdir: /home/ubuntu/src/
 
-
+  - name: Docker image push
+    command: docker push reolwe/tomcatprod
+    args:
+      chdir: /home/ubuntu/src/
 
 
 
