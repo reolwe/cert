@@ -13,7 +13,7 @@
   - name: Git clone src
     git:
       repo: 'https://github.com/reolwe/origin555.git'
-      dest: /home/ubuntu/
+      dest: /home/ubuntu/src/
       clone: yes
       update: yes
   - name: Maven build app
@@ -24,13 +24,13 @@
   - name: Docker login
     command: docker login -u reolwe -p dckr_pat_ZydUH_tEynqAgDlLQSQhZGE9tPE
     args:
-      chdir: /home/ubuntu/
+      chdir: /home/ubuntu/src/
 
 
   - name: Docker build and push
     command: docker build --tag=reolwe/tomcatprod .&& docker push reolwe/tomcatprod
     args:
-      chdir: /home/ubuntu/
+      chdir: /home/ubuntu/src/
 
 
   - name: Install packeges
