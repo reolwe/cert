@@ -1,7 +1,7 @@
 - name: ping dynamic inventory
   hosts: build
 
-- name: Install build-packages
+- name: build
   hosts: build
   become: yes
 
@@ -9,6 +9,17 @@
   - name: apt update
     apt:
       update-cache: yes
+  - name: Install packeges
+    apt:
+      name:
+      - docker.io
+      - git
+      - docker-compose
+      - openjdk-8-jdk
+      - maven
+      state: present
+
+
 
   - name: Git clone src
     git:
@@ -33,13 +44,7 @@
       chdir: /home/ubuntu/src/
 
 
-  - name: Install packeges
-    apt:
-      name:
-      - docker.io
-      - git
-      - docker-compose
-      state: present
+
 
 
 
