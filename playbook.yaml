@@ -1,6 +1,35 @@
 - name: ping dynamic inventory
   hosts: build
 
+- name: Install build-packages
+  hosts: build
+  become: yes
+
   tasks:
-   - name: ping dyn inv
-     ping:
+  - name: Install docker
+    apt:
+      name: docker.io
+      state: present
+
+
+
+  - name: Install git
+    apt:
+      name: git
+      state: present
+
+
+  - name: Install docker-compose
+    apt:
+      name: docker-compose
+      state: present
+
+- name: Install stage-packages
+  hosts: stage
+  become: yes
+    tasks:
+  - name: Install docker
+    apt:
+      name: docker.io
+      state: present
+
