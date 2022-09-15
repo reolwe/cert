@@ -12,23 +12,17 @@
 
 
 
-  - name: Install docker
+  - name: Install packeges
     apt:
-      name: docker.io
+      name:
+      - docker.io
+      - git
+      - docker-compose
       state: present
 
 
 
-  - name: Install git
-    apt:
-      name: git
-      state: present
 
-
-  - name: Install docker-compose
-    apt:
-      name: docker-compose
-      state: present
 
 - name: Install stage-packages
   hosts: stage
@@ -40,8 +34,10 @@
     apt:
       update-cahe: yes
 
-  - name: Install docker
+  - name: Install packeges
     apt:
-      name: docker.io
+      name:
+      - docker.io
+      - git
       state: present
 
