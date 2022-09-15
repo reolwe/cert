@@ -6,6 +6,12 @@
   become: yes
 
   tasks:
+  - name: apt update
+    apt:
+      update-cahe: yes
+
+
+
   - name: Install docker
     apt:
       name: docker.io
@@ -29,6 +35,11 @@
   become: yes
 
   tasks:
+
+  - name: apt update
+    apt:
+      update-cahe: yes
+
   - name: Install docker
     apt:
       name: docker.io
