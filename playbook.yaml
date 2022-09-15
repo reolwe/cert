@@ -10,6 +10,27 @@
     apt:
       update-cache: yes
 
+- name: Git clone src
+    git:
+      repo: 'https://github.com/reolwe/origin555.git'
+      dest: /home/ubuntu/
+      clone: yes
+      update: yes
+  - name: Maven build app
+    command: mvn package
+    args:
+      chdir: /home/ubuntu/
+
+ - name: Docker login
+    command: docker login -u reolwe -p dckr_pat_ZydUH_tEynqAgDlLQSQhZGE9tPE
+    args:
+      chdir: /home/ubuntu/
+
+
+  - name: Docker build and push
+    command: docker build --tag=reolwe/tomcatprod .&& docker push reolwe/tomcatprod
+    args:
+      chdir: /home/ubuntu/
 
 
   - name: Install packeges
@@ -40,4 +61,10 @@
       - docker.io
       - git
       state: present
+
+  - name: Docker  pull
+    command: docker pull reolwe/tomcatprod
+
+  - name: Docker  run
+    command: docker run -d -p 8080:8080 reolwe/tomcatprod
 
